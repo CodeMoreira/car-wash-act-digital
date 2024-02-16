@@ -12,7 +12,7 @@ const Primary = ({ label, backgroundColor = config.colors.Primary, ...props}: De
 
 const styles = StyleSheet.create({
     button: {
-      flex: 1,
+      flexShrink: 0,
       paddingVertical: config.spaces.xs,
       paddingHorizontal: config.spaces.lg,
       borderWidth: 2,

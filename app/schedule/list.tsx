@@ -53,7 +53,7 @@ const ListSchedules = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <Header title='Agendamentos' />
-      {!isLoading && !list.length && (
+      {!isLoading && list.length === 0 && (
         <Text style={styles.placeholderText}>Ainda não há nenhum agendamento.</Text>
       )}
       <FlatList
