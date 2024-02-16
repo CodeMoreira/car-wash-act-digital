@@ -12,6 +12,7 @@ import { router } from 'expo-router';
 
 export interface scheduleData extends newScheduleProps {
   id: string;
+  status: "PENDING" | "FINISHED" | "CANCELED"
 }
 
 const Item = ({ plate, wash_type, date, time, id  }: scheduleData) => {

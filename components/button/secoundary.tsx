@@ -4,7 +4,7 @@ import { config } from '../configs';
 
 const Primary = ({ label, backgroundColor = config.colors.Primary, ...props}: DefaultButtonProps) => {
   return (
-    <TouchableOpacity style={[styles.button, { backgroundColor }]} {...props}>
+    <TouchableOpacity style={[styles.button, { borderColor: backgroundColor }]} {...props}>
         <Text style={styles.text}>{label}</Text>
     </TouchableOpacity>
   );
@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
       paddingVertical: config.spaces.xs,
       paddingHorizontal: config.spaces.lg,
       borderWidth: 2,
-      borderColor: config.colors.Primary,
       borderRadius: config.radius.sm,
       alignItems: "center",
     },
