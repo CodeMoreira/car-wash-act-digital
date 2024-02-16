@@ -72,7 +72,7 @@ const Details = () => {
                     </View>
 
                     {data!.status !== "PENDING" ? (
-                        <Text style={[styles.title, { textAlign: "center" }]}>Esse agendamento ja foi {convertStatus[data!.status]}</Text>
+                        <Text style={[styles.title, { textAlign: "center" }]}>Esse agendamento foi {convertStatus[data!.status]}</Text>
                     ) : (
                         <View style={styles.buttonsContainer}>
                             <Button label='Concluir' type='Primary' onPress={() => setShowFinishModal(true)}/>
