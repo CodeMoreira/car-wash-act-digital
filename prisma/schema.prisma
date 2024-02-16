@@ -1,0 +1,27 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Schedule {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+
+  plate     String
+  wash_type Wash_Types
+  date      DateTime
+  time      String
+
+  @@map("schedules")
+}
+
+enum Wash_Types {
+  SIMPLES
+  COMPLETA
+}
