@@ -17,6 +17,7 @@ model Schedule {
   wash_type Wash_Types
   date      DateTime
   time      String
+  status    status     @default(PENDING)
 
   @@map("schedules")
 }
@@ -24,4 +25,10 @@ model Schedule {
 enum Wash_Types {
   SIMPLES
   COMPLETA
+}
+
+enum status {
+  PENDING
+  FINISHED
+  CANCELED
 }
