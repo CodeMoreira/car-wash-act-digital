@@ -12,17 +12,18 @@ const Primary = ({ label, backgroundColor = config.colors.Primary, ...props}: De
 
 const styles = StyleSheet.create({
     button: {
-        paddingVertical: config.spaces.xs,
-        paddingHorizontal: config.spaces.lg,
-        borderWidth: 2,
-        borderColor: config.colors.Primary,
-        borderRadius: config.radius.sm,
-        alignItems: "center",
+      flex: 1,
+      paddingVertical: config.spaces.xs,
+      paddingHorizontal: config.spaces.lg,
+      borderWidth: 2,
+      borderColor: config.colors.Primary,
+      borderRadius: config.radius.sm,
+      alignItems: "center",
     },
     text: {
-        fontSize: config.fontSizes.md,
-        color: config.colors.Primary,   
-        fontWeight: "bold", 
+      fontSize: config.fontSizes.md,
+      color: config.colors.Primary,   
+      fontWeight: "bold", 
     }
 })
 
