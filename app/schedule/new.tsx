@@ -1,4 +1,4 @@
-import { View, StyleSheet, Dimensions, ActivityIndicator } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import DatePicker from '../../components/datePicker';
 import Header from '../../components/header';
@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import searchForAvailableTimes from '../../services/searchForAvailableTimes';
 import newSchedule, { newScheduleProps } from '../../services/newSchedule';
 import { router } from 'expo-router';
+import Loading from '../../components/loading';
 
 const NewSchedule = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -135,29 +136,14 @@ const NewSchedule = () => {
         </View>
       </View>
 
-      {isLoading && (
-        <View style={styles.loadingWrapper}>
-          <ActivityIndicator size="large" color={config.colors.Primary} />
-        </View>
-      )}
+      <Loading isLoading={isLoading}/>
     </SafeAreaView>
   );
 };
 
 export default NewSchedule;
 
-const screenWidth = Dimensions.get('screen').width;
-const screenHeight = Dimensions.get('screen').height;
-
 const styles = StyleSheet.create({
-  loadingWrapper: {
-    position: "absolute",
-    width: screenWidth,
-    height: screenHeight,
-    backgroundColor: "#00000084",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   wrapper: {
     flex: 1,
   },
